@@ -1,5 +1,5 @@
 import paho.mqtt.client as mqtt
-import InverterMsg
+from . import InverterMsg
 import json
 import time
 import threading
@@ -103,7 +103,7 @@ class MqttClient(object):
     def hass_sensors_config(self, sensor_name_prefix):
 
         d = {}
-        d["temp"] = {"unit_of_measurement": u"\N{DEGREE SIGN}C"}
+        d["temp"] = {"unit_of_measurement": "\N{DEGREE SIGN}C"}
         d["v_pv1"] = {"unit_of_measurement": "V"}
         d["v_pv2"] = {"unit_of_measurement": "V"}
         d["i_pv1"] = {"unit_of_measurement": "A"}
@@ -151,5 +151,5 @@ class MqttClient(object):
 
 
 if __name__ == '__main__':
-    for k in InverterMsg.InverterMsg(None).dict().keys():
-        print k
+    for k in list(InverterMsg.InverterMsg(None).dict().keys()):
+        print(k)

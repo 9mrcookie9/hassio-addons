@@ -202,7 +202,7 @@ class InverterMsg(object):
         Returns:
             float: PV voltage of channel i
         """
-        if i not in range(1, 3):
+        if i not in list(range(1, 3)):
             i = 1
         num = offset[5] + (i - 1) * 2
         return self.__get_short(num)
@@ -219,7 +219,7 @@ class InverterMsg(object):
         Returns:
             float: PV current of channel i
         """
-        if i not in range(1, 3):
+        if i not in list(range(1, 3)):
             i = 1
         num = offset[6] + (i - 1) * 2
         return self.__get_short(num)
@@ -237,7 +237,7 @@ class InverterMsg(object):
             float: AC current of channel i
 
         """
-        if i not in range(1, 4):
+        if i not in list(range(1, 4)):
             i = 1
         num = offset[7] + (i - 1) * 2
         return self.__get_short(num)
@@ -254,7 +254,7 @@ class InverterMsg(object):
         Returns:
             float: AC voltage of channel i
         """
-        if i not in range(1, 4):
+        if i not in list(range(1, 4)):
             i = 1
         num = offset[8] + (i - 1) * 2
         return self.__get_short(num)

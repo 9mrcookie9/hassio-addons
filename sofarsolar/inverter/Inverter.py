@@ -1,10 +1,10 @@
-import TcpProxy
+from . import TcpProxy
 import pprint
-import InverterMsg
-import FakeDNS
+from . import InverterMsg
+from . import FakeDNS
 import os
 import sys
-import MqttClient
+from . import MqttClient
 import logging
 import json
 import anyconfig
